@@ -1,88 +1,43 @@
 (function () {
     let initialized = false;
 
+    function seededRandom(seed) {
+        let value = seed;
+        return function () {
+            value = (value * 9301 + 49297) % 233280;
+            return value / 233280;
+        };
+    }
+
+    function generateSchedule(staffId) {
+        const random = seededRandom(staffId.charCodeAt(0) * 1000 + staffId.length);
+        const schedule = {
+            shifts: {
+                0: [],
+                1: [],
+                2: []
+            }
+        };
+
+        for (let day = 0; day < 7; day++) {
+            schedule.shifts[0].push(random() < 0.6 ? 1 : 0);
+            schedule.shifts[1].push(random() < 0.6 ? 1 : 0);
+            schedule.shifts[2].push(random() < 0.2 ? 1 : 0);
+        }
+
+        return schedule;
+    }
+
     function initSchedules() {
         if (initialized) return;
         initialized = true;
 
         const scheduleContainers = document.querySelectorAll(".staff-schedule");
 
-        const fixedSchedules = [
-            {
-                shifts: {
-                    0: [1, 1, 1, 0, 1, 1, 0],
-                    1: [0, 1, 0, 1, 0, 1, 0],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [0, 1, 1, 1, 0, 1, 1],
-                    1: [0, 0, 1, 0, 0, 0, 1],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [1, 0, 1, 1, 1, 0, 1],
-                    1: [1, 0, 0, 1, 0, 0, 0],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [1, 1, 0, 1, 1, 1, 0],
-                    1: [0, 1, 0, 0, 1, 0, 0],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [0, 1, 1, 0, 1, 1, 1],
-                    1: [0, 0, 1, 0, 0, 1, 0],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [1, 0, 1, 1, 0, 1, 1],
-                    1: [1, 0, 0, 1, 0, 0, 1],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [1, 1, 0, 1, 1, 0, 1],
-                    1: [0, 1, 0, 0, 1, 0, 0],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [0, 1, 1, 0, 1, 1, 1],
-                    1: [0, 0, 1, 0, 0, 1, 0],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [1, 0, 1, 1, 1, 1, 0],
-                    1: [1, 0, 0, 1, 0, 0, 0],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            },
-            {
-                shifts: {
-                    0: [1, 1, 1, 0, 0, 1, 1],
-                    1: [0, 1, 0, 0, 0, 0, 1],
-                    2: [0, 0, 0, 0, 0, 0, 0]
-                }
-            }
-        ];
-
-        scheduleContainers.forEach((container, staffIndex) => {
+        scheduleContainers.forEach((container) => {
             const cells = container.querySelectorAll(".schedule-cell");
-            const schedule = fixedSchedules[staffIndex % fixedSchedules.length];
+            const staffId = container.getAttribute("data-staff");
+            const schedule = generateSchedule(staffId);
 
             cells.forEach((cell) => {
                 const dayAttr = cell.getAttribute("data-day");
