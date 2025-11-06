@@ -513,8 +513,18 @@ img {
   color: var(--color-primary);
 }
 
+.menu-detail {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(44, 107, 102, 0.1);
+}
+
+.menu-detail p {
+  margin-bottom: 0.5rem;
+}
+
 .menu-points {
-  margin: 0;
+  margin: 0.5rem 0 0 0;
   padding-left: 1.1rem;
   color: var(--color-text);
 }
