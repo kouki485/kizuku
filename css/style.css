@@ -653,6 +653,24 @@ img {
   text-underline-offset: 4px;
 }
 
+.info-phone-link {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all var(--transition-base);
+  display: inline-block;
+}
+
+.info-phone-link:hover,
+.info-phone-link:focus {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 .staff-cards {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
