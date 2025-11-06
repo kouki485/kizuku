@@ -939,3 +939,83 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(193, 66, 66, 0.15);
 }
 
+/* Policy page styles */
+.policy-section {
+  background-color: var(--color-background);
+}
+
+.policy-intro {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.policy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.policy-list li {
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  background-color: var(--color-section);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.policy-list li::before {
+  content: "◆";
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+
+.policy-notice {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.5rem;
+  background-color: rgba(44, 107, 102, 0.08);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+}
+
+.policy-paragraph {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.policy-callout {
+  background-color: rgba(44, 107, 102, 0.1);
+  border: 2px solid var(--color-primary);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.policy-callout p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.7;
+}
+
+.policy-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.policy-section--highlight {
+  background-color: var(--color-section);
+  border-radius: 16px;
+  padding: 3rem 0;
+}
+

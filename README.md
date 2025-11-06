@@ -9,6 +9,7 @@
 ├── index.html          # トップページ
 ├── menu.html           # メニューページ
 ├── staff.html          # スタッフ紹介
+├── policy.html         # 施術に関する注意事項
 ├── contact.html        # お問い合わせ
 ├── css/
 │   ├── style.css       # 共通スタイル・テーマカラー
