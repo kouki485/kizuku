@@ -281,6 +281,19 @@ img {
   font-size: 1rem;
 }
 
+.hero-notice {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(4px);
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;
@@ -421,6 +434,12 @@ img {
 .footer-logo {
   font-family: var(--font-serif);
   font-size: 1.3rem;
+}
+
+.footer-notice {
+  font-size: 0.85rem;
+  color: #b3d9d1;
+  margin-top: 0.5rem;
 }
 
 .page-hero {
@@ -796,6 +815,18 @@ img {
 .contact-info .info-card:focus-within {
   transform: none;
   box-shadow: none;
+}
+
+.contact-notice {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background-color: rgba(100, 167, 133, 0.08);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(100, 167, 133, 0.2);
+  margin-bottom: 2rem;
 }
 
 .form {
