@@ -1019,3 +1019,65 @@ textarea:focus {
   padding: 3rem 0;
 }
 
+/* Staff schedule styles */
+.staff-schedule {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(44, 107, 102, 0.15);
+}
+
+.schedule-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  table-layout: fixed;
+}
+
+.schedule-table thead th {
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-primary);
+  background-color: var(--color-section);
+  width: auto;
+}
+
+.schedule-table tbody td {
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(44, 107, 102, 0.1);
+}
+
+.schedule-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--color-text);
+  background-color: var(--color-section);
+  width: 2.5rem;
+}
+
+.schedule-cell {
+  min-height: 2rem;
+  color: var(--color-primary);
+  font-size: 1rem;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.schedule-cell.is-working {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.schedule-cell.is-not-working {
+  color: var(--color-muted);
+  opacity: 0.5;
+}
+
