@@ -269,6 +269,10 @@ img {
   margin-bottom: 0.5rem;
 }
 
+.hero-content h1 .hero-subtitle-text {
+  font-size: 0.75em;
+}
+
 .hero-subtitle {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   margin-bottom: 0.5rem;
