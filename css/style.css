@@ -1026,6 +1026,31 @@ textarea:focus {
   border-top: 1px solid rgba(44, 107, 102, 0.15);
 }
 
+.schedule-toggle-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.schedule-toggle-btn:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.schedule-toggle-btn[aria-expanded="true"] {
+  background-color: var(--color-primary);
+  color: white;
+}
+
 .schedule-title {
   font-size: 0.95rem;
   font-weight: 600;
