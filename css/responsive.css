@@ -3,8 +3,15 @@
     padding: 0.5rem 0;
   }
 
+  .header-phone {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    order: 2;
+  }
+
   .nav-toggle {
     display: block;
+    order: 3;
   }
 
   .main-nav {
@@ -22,6 +29,7 @@
     pointer-events: none;
     transition: opacity var(--transition-base),
       transform var(--transition-base);
+    order: 4;
   }
 
   .main-nav.is-open {
@@ -70,6 +78,16 @@
 @media (max-width: 600px) {
   .section {
     padding: 3rem 0;
+  }
+
+  .header-phone {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.6rem;
+    border-width: 1.5px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
   }
 
   .form {

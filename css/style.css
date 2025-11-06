@@ -160,6 +160,26 @@ img {
   letter-spacing: 0.08em;
 }
 
+.header-phone {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 4px;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.header-phone:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 167, 133, 0.3);
+}
+
 .main-nav {
   display: flex;
   align-items: center;
