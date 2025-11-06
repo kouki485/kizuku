@@ -109,10 +109,6 @@
                 <input id="name" name="name" type="text" required autocomplete="name" />
               </div>
               <div class="form-field">
-                <label for="kana">フリガナ<span aria-hidden="true">*</span></label>
-                <input id="kana" name="kana" type="text" required autocomplete="additional-name" />
-              </div>
-              <div class="form-field">
                 <label for="email">メールアドレス<span aria-hidden="true">*</span></label>
                 <input id="email" name="email" type="email" required autocomplete="email" />
               </div>
@@ -130,41 +126,12 @@
                 />
                 <p id="phone-note" class="field-note">ハイフンなし10〜11桁で入力してください。</p>
               </div>
-              <div class="form-field">
-                <label for="menu">ご希望のメニュー</label>
-                <select id="menu" name="menu">
-                  <option value="">選択してください</option>
-                  <option value="relaxation-60">出張リラクゼーション 60分</option>
-                  <option value="relaxation-90">出張リラクゼーション 90分</option>
-                  <option value="relaxation-120">出張リラクゼーション 120分</option>
-                  <option value="extension">延長料金</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="date">ご希望日時</label>
-                <input id="date" name="preferred-date" type="datetime-local" />
-              </div>
-              <div class="form-field form-field-full">
-                <label for="address">ご住所</label>
-                <textarea id="address" name="address" rows="3"></textarea>
-              </div>
               <div class="form-field form-field-full">
                 <label for="message">お問い合わせ内容<span aria-hidden="true">*</span></label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-              </div>
-              <div class="form-field form-checkbox">
-                <input
-                  id="privacy"
-                  name="privacy"
-                  type="checkbox"
-                  value="agree"
-                  required
-                  aria-describedby="privacy-note"
-                />
-                <label for="privacy">プライバシーポリシーに同意します<span aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" rows="8" required placeholder="ご希望のメニュー、日時、ご住所などをご記入ください。"></textarea>
               </div>
             </div>
-            <p id="privacy-note" class="field-note">
+            <p class="field-note">
               送信前に入力内容をご確認ください。個人情報はお問い合わせ対応の目的以外には使用いたしません。
             </p>
             <div class="form-actions">

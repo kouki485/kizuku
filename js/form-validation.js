@@ -7,11 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const submitButton = form.querySelector("button[type='submit']");
-  const kanaInput = form.querySelector("#kana");
   const phoneInput = form.querySelector("#phone");
-  const privacyInput = form.querySelector("#privacy");
-
-  const kanaRegex = /^[ァ-ヴー\s]+$/u;
 
   const setFeedback = (state, message) => {
     feedback.textContent = message;
@@ -47,12 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       target.value = target.value.replace(/[^0-9]/g, "");
     }
 
-    if (target === kanaInput) {
-      if (kanaRegex.test(target.value.trim()) || target.value.trim().length === 0) {
-        target.setCustomValidity("");
-      }
-    }
-
     if (target.checkValidity()) {
       toggleInvalidState(target, true);
       target.setCustomValidity("");
@@ -76,17 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
     setFeedback("", "");
 
-    if (kanaInput) {
-      if (kanaInput.value.trim().length === 0) {
-        kanaInput.setCustomValidity("フリガナを入力してください。");
-      } else if (!kanaRegex.test(kanaInput.value.trim())) {
-        kanaInput.setCustomValidity("フリガナは全角カタカナで入力してください。");
-      } else {
-        kanaInput.setCustomValidity("");
-      }
-      toggleInvalidState(kanaInput, kanaInput.checkValidity());
-    }
-
     if (phoneInput) {
       phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
       if (!/^[0-9]{10,11}$/.test(phoneInput.value)) {
@@ -95,16 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
         phoneInput.setCustomValidity("");
       }
       toggleInvalidState(phoneInput, phoneInput.checkValidity());
-    }
-
-    if (privacyInput) {
-      const checked = privacyInput.checked;
-      toggleInvalidState(privacyInput, checked);
-      if (!checked) {
-        privacyInput.setCustomValidity("プライバシーポリシーへの同意が必要です。");
-      } else {
-        privacyInput.setCustomValidity("");
-      }
     }
 
     if (!form.checkValidity()) {
